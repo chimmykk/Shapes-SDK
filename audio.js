@@ -1,7 +1,7 @@
 const { createShapesSDK } = require("shapes-sdk-ts");
 
 async function run() {
-  const sdk = createShapesSDK({ apiKey: "HiocgM0BiVRdy7Dy0dWYdw7GWF4KfUId22TpN90yyuo" });
+  const sdk = createShapesSDK({ apiKey: "<api>key" });
 
   const audioPath = "./assetexample/MATH.mp3";
   console.log("Analyzing audio file:", audioPath);
