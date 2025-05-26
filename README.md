@@ -65,6 +65,40 @@ const response = await sdk.sendMessage("Hello!", "shapesinc/bidya");
 const response = await sdk.sendMessage.model["shapesinc/bidya"]("Hello!");
 ```
 
+
+### Header  UserID<>ChannelID
+```
+
+import { createShapesSDK, SDKOptions } from 'shapes-sdk-ts';
+
+async function main() {
+  const options: SDKOptions = { apiKey: '' };
+  const sdk = createShapesSDK(options);
+
+  const values = {
+    userId: 'user-123',
+    channelId: 'channel-abc'
+  };
+
+  const headers: Record<string, string> = {};
+  if (values.userId) {
+    headers["X-User-Id"] = values.userId;
+  }
+  if (values.channelId) {
+    headers["X-Channel-Id"] = values.channelId;
+  }
+
+  try {
+    const response = await sdk.sendMessage("Hello", "shapesinc/tenshi");
+    console.log("Response:", response);
+  } catch (error) {
+    console.error("Error sending message:", error);
+  }
+}
+
+main();
+```
+
 **Supported Content Types:**
 - Plain text strings
 - Structured content objects with `type: "text"`
