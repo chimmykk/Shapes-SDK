@@ -283,6 +283,26 @@ try {
 }
 ```
 
+## SUPPORT debugging
+```
+const client = createShapesClient({
+    apiKey: "<API KEY>",
+    baseUrl: "https://api.shapes.inc/v1",
+    debug: { enabled: false }, // Enable debugging (true)
+  });
+```
+## Shapes Profile
+```
+ const sdk = createShapesSDK();
+  
+  try {
+    console.log('Fetching profile...');
+    const profile = await sdk.getProfile('testuser'); // Replace with a valid username
+    console.log('Profile data:', JSON.stringify(profile, null, 2));
+  } catch (error) {
+    console.error('Error:', error instanceof Error ? error.message : String(error));
+  }
+```
 ## TypeScript Support
 
 The SDK is fully typed for TypeScript projects:
